@@ -1,0 +1,14 @@
+const express = require('express')
+const app = express()
+const secrets = require('./secrets');
+const mongoose = require('mongoose');
+
+app.get('/', (req, res) => res.send('Hello World!'))
+
+mongoose.connect(secrets.db);
+mongoose.connection.on('error', function () {
+    console.error('MongoDB Connection Error. Please make sure that MongoDB is running.');
+});
+mongoose.Promise = global.Promise;
+
+app.listen(3000, () => console.log('Example app listening on port 3000!'))

@@ -1,0 +1,29 @@
+{
+  "name": "sknpg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sgracki/SKN-PG.git"
+  },
+  "keywords": [
+    "blog",
+    "engine",
+    "nodejs",
+    "angularjs"
+  ],
+  "author": "Szymon Grącki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sgracki/SKN-PG/issues"
+  },
+  "homepage": "https://github.com/sgracki/SKN-PG#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongoose": "^4.13.6"
+  }
+}
