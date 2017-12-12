@@ -7,7 +7,7 @@ body {
 }
 
 .main-view {
-    padding: 0 15px;
+    padding: 15px;
 }
 
 .box {
@@ -22,7 +22,7 @@ ul > li {
     padding: 15px 8px;
 }
 
-ul > li > a {
+ul > li > a, ul > li > a:hover, ul > li > a:focus {
     color: #fff;
     text-decoration: none;
     font-weight: 400;
@@ -75,29 +75,16 @@ div.nav {
     background: #fff;
     height: 100vh;
     -webkit-clip-path: polygon(0 0%,100% 0,70% 100%,0 100%);
-}
-
-[class*="col-"] {
     float: left;
-    padding: 15px;
-    box-sizing: border-box;
 }
 
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
+.carousel {
+    display: relative;
 }
 
-.col-1 {width: 8.33%;}
-.col-2 {width: 16.66%;}
-.col-3 {width: 25%;}
-.col-4 {width: 33.33%;}
-.col-5 {width: 41.66%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.33%;}
-.col-8 {width: 66.66%;}
-.col-9 {width: 75%;}
-.col-10 {width: 83.33%;}
-.col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
+.carousel > div.slide {
+    float: left;
+    display: block;
+    background-color: #D81B60;
+    margin: 0 10px;
+}

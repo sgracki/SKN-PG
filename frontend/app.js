@@ -1,15 +1,22 @@
 angular.module('sknPg', ['ngRoute','sknPg.index'])
-
-    .run(function($rootScope) {
-        $rootScope.$on('$viewContentLoaded', function(){
-            $rootScope.viewLoaded = true;
+    .run(['Carousel', (Carousel) => {
+        Carousel.setOptions({
+            arrows: true,
+            autoplay: false,
+            autoplaySpeed: 3000,
+            cssEase: 'ease',
+            dots: false,
+        
+            easing: 'linear',
+            fade: false,
+            infinite: true,
+            initialSlide: 0,
+        
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            speed: 500,
         });
-
-        $rootScope.$on('$routeChangeStart', function() { 
-            $rootScope.viewLoaded = false;
-        });
-
-    })
+    }])
     .config(['$routeProvider',
         function ($routeProvider) {
             $routeProvider.

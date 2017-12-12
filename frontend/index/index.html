@@ -1,6 +1,14 @@
 <div ng-controller="IndexCtrl as main">
-    <div class="col-4 post-item" style="padding: 20px;text-align:center;">
-        <h1 style="font-weight: 200;color: rgb(9, 18, 66)">Bajlero</h1>
-        <p style="padding: 20px;box-sizing:border-box">Wpadam na bit</p>
-    </div>
+    <ui-carousel slides="main.slides" slides-to-show="5" slides-to-scroll="1">
+        <!-- For slider render -->
+        <carousel-item>
+            <!-- placed your item content here -->
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.desc }}</p>
+            <!-- end -->
+        </carousel-item>
+
+        <a ng-click="ctrl.prev()">Prev</a>
+        <a ng-click="ctrl.next()">Next</a>
+    </ui-carousel>
 </div>
