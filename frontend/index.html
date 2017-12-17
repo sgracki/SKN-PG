@@ -2,10 +2,36 @@
     <head>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
-
+        <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+        <link rel="icon" href="./favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="./css/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:200" rel="stylesheet">
+        <link href="./css/hover.css" rel="stylesheet" media="all">
         <script src=""></script>
     </head>
     <body>
-        <div ng-view></div>
+        <div class="box">
+            <div class="nav col-2">
+                <ul>
+                    <li>
+                        <a class="hvr-underline-from-left" href="#/menu">Menu</a>
+                    </li>
+                    <li>
+                        <a class="hvr-underline-from-left" href="#/articles">Artykuły</a>
+                    </li>
+                    <li>
+                        <a class="hvr-underline-from-left" href="#/contact">Kontakt</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="shadow col-2"></div>
+        </div>
+
+        <div ng-view class="main-view col-8">
+            <div class="col-4" style="padding: 20px;text-align:center;border:1px solid rgb(255, 217, 0)">
+                <h1 style="font-weight: 200;color: rgb(255, 238, 0)">Bajlero</h1>
+                <p style="padding: 20px;box-sizing:border-box">Wpadam na bit</p>
+            </div>
+        </div>
     </body>
 </html>
