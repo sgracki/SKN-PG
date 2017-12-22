@@ -1,11 +1,8 @@
 <div ng-controller="IndexCtrl as main">
     <ui-carousel slides="main.slides" slides-to-show="4" slides-to-scroll="1">
-        <!-- For slider render -->
         <carousel-item>
-            <!-- placed your item content here -->
             <h2>{{ item.title }}</h2>
             <p>{{ item.desc }}</p>
-            <!-- end -->
         </carousel-item>
 
         <a ng-click="ctrl.prev()">Prev</a>
