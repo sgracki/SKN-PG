@@ -11,6 +11,10 @@ body {
     /* margin-left: calc(16.66% + 2px) */
 }
 
+.post-carousel > div.slide {
+    font-family: inherit;
+}
+
 .no-padding {
     padding: 0;
 }
@@ -38,6 +42,7 @@ ul {
 .ui-carousel .carousel-btn {
     position: relative;
     float: left;
+    margin-top: 15px;
 }
 
 ul > li {
@@ -73,6 +78,10 @@ ul > li > a:hover {
     -webkit-clip-path: polygon(0 0%,100% 0,100% 100%,0 100%);
     background-color: #D81B60;
     transition: all .18s ease-in-out;
+}
+
+h1, h2 {
+    font-family: 'Montserrat', sans-serif;
 }
 
 .post-item:hover {
