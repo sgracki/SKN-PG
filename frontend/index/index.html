@@ -1,8 +1,10 @@
-<div ng-controller="IndexCtrl as main">
+<div class="col-md-12">
     <ui-carousel slides="main.slides" slides-to-show="4" slides-to-scroll="1">
         <carousel-item>
-            <h2>{{ item.title }}</h2>
-            <p>{{ item.desc }}</p>
+            <div class="col-4" style="padding: 20px;margin:10px;text-align:center;">
+                <h1 style="font-weight: 200;color: rgb(255, 238, 0)">{{ item.title }}</h1>
+                <p style="padding: 20px;box-sizing:border-box">{{ item.desc }}</p>
+            </div>
         </carousel-item>
 
         <a ng-click="ctrl.prev()">Prev</a>

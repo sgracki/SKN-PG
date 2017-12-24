@@ -1,4 +1,4 @@
-angular.module('sknPg', ['ngRoute','sknPg.index'])
+angular.module('sknPg', ['ngRoute','sknPg.index','sknPg.contact'])
     .run(['Carousel', (Carousel) => {
         Carousel.setOptions({
             arrows: true,
@@ -20,23 +20,82 @@ angular.module('sknPg', ['ngRoute','sknPg.index'])
     .config(['$routeProvider',
         function ($routeProvider) {
             $routeProvider.
-                when('/index', {
+                when('/home', {
                     templateUrl: 'index/index.html',
-                    controller: 'IndexCtrl'
+                    controller: 'IndexCtrl',
+                    controllerAs: 'main'
+                }).
+                when('/contact', {
+                    templateUrl: 'contact/index.html',
+                    controller: 'ContactCtrl',
+                    controllerAs: 'main'
                 }).
                 otherwise({
-                    redirectTo: '/index'
+                    redirectTo: '/home'
                 });
         }])
     .controller('MainCtrl', function () {
         this.menu = [{
-            href:`/#/articles`,
-            title:`Artykuły`
+            href:'home',
+            title:`Start`
         },{
-            href:`/#/contact`,
+            href:'contact',
             title:`Kontakt`
         }]
     })
+    .directive('ahrefActiveLink', ['$location', function ($location) {
+        return {
+            restrict: 'A', //use as attribute
+            replace: false,
+            link: function (scope, elem) {
+                console.log('#/' + $location.path().split("/")[1]);
+
+                //after the route has changed
+                scope.$on("$routeChangeSuccess", function () {
+                    var hrefs = ['/#' + $location.path(),
+                        '#' + $location.path(), //html5: false
+                        '#/' + $location.path().split("/")[1],  //!NOTE wykorzystanie tez podmodulow
+                        $location.path()]; //html5: true
+                    angular.forEach(elem.find('a'), function (a) {
+                        a = angular.element(a);
+                        if (-1 !== hrefs.indexOf(a.attr('href'))) {
+                            a.addClass('active');
+                        } else {
+                            a.removeClass('active');
+                        }
+                        ;
+                    });
+                });
+            }
+        }
+    }])
+    .directive('ulActiveLink', ['$location', function ($location) {
+        return {
+            restrict: 'A', //use as attribute
+            replace: false,
+            link: function (scope, elem) {
+                console.log('#/' + $location.path().split("/")[1]);
+
+                //after the route has changed
+                scope.$on("$routeChangeSuccess", function () {
+                    var hrefs = ['/#' + $location.path(),
+                        '#' + $location.path(), //html5: false
+                        '#/' + $location.path().split("/")[1],  //!NOTE wykorzystanie tez podmodulow
+                        $location.path()]; //html5: true
+
+                    angular.forEach(elem.find('a'), function (a) {
+                        a = angular.element(a);
+                        if (-1 !== hrefs.indexOf(a.attr('href'))) {
+                            a.parent().addClass('active');
+                        } else {
+                            a.parent().removeClass('active');
+                        }
+                        ;
+                    });
+                });
+            }
+        }
+    }])
     .directive('loader', function() {
         return {
             scope: { show: '=' },
