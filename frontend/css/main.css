@@ -45,6 +45,10 @@ ul {
     margin-top: 15px;
 }
 
+* {
+    outline: 0 !important;
+}
+
 ul > li {
     padding: 15px 8px;
 }
@@ -54,6 +58,7 @@ ul > li > a, ul > li > a:hover, ul > li > a:focus {
     text-decoration: none;
     font-weight: 400;
     padding: 6px 8px;
+    border-bottom: none;
 }
 
 ul > li > a:hover {
