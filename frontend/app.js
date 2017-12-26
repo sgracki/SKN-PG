@@ -1,4 +1,4 @@
-angular.module('sknPg', ['ngRoute','sknPg.index','sknPg.contact'])
+angular.module('sknPg', ['ngRoute','sknPg.index','sknPg.contact', 'ngAnimate'])
     .run(['Carousel', (Carousel) => {
         Carousel.setOptions({
             arrows: true,

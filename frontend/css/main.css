@@ -4,7 +4,11 @@ body {
     background-color: rgb(9, 18, 66);
     color: #fff;
     font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden
 }
+
+.ng-enter           { animation: fadeIn 0.3s ease-in-out; z-index: 8888; }
+.ng-leave           { display: none }
 
 .carousel {
     opacity: 0;
@@ -441,3 +445,56 @@ div.nav {
       -webkit-transform: scale(1.0);
     }
   }
+
+/* ANIMATIONS
+============================================================================= */
+
+/* leaving animations ----------------------------------------- */
+/* rotate and fall */
+@keyframes rotateFall {
+    0%      { transform: rotateZ(0deg); }
+    20%     { transform: rotateZ(10deg); animation-timing-function: ease-out; }
+    40%     { transform: rotateZ(17deg); }
+    60%     { transform: rotateZ(16deg); }
+    100%    { transform: translateY(100%) rotateZ(17deg); }
+}
+
+/* slide in from the bottom */
+@keyframes slideOutLeft {
+    to      { transform: translateX(-100%); }
+}
+
+/* rotate out newspaper */
+@keyframes rotateOutNewspaper {
+    to      { transform: translateZ(-3000px) rotateZ(360deg); opacity: 0; }
+}
+
+/* entering animations --------------------------------------- */
+/* scale up */
+@keyframes scaleUp {
+    from    { opacity: 0.3; -webkit-transform: scale(0.8); }
+}
+
+/* slide in from the right */
+@keyframes fadeIn {
+    from    { visibility: hidden;opacity: 0 }
+    to      { visibility: visible;opacity: 1 }
+}
+
+/* slide in from the right */
+@keyframes fadeOut {
+    from    { display: block }
+    to      { display: none }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+    from    { transform:translateX(100%); }
+    to      { transform: translateX(0); }
+}
+
+/* slide in from the bottom */
+@keyframes slideInUp {
+    from    { transform:translateY(100%); }
+    to      { transform: translateY(0); }
+}
