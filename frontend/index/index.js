@@ -1,5 +1,6 @@
 angular.module('sknPg.index', ['ui.carousel'])
     .controller('IndexCtrl', function () {
+        this.carouselLoading = true;
         this.slides = [
             {
               title: "1 title",
@@ -21,7 +22,11 @@ angular.module('sknPg.index', ['ui.carousel'])
               title: "5 title",
               desc: 'http://lorempixel.com/560/400/sports/5', 
             },
-          ];
+        ];
+
+        this.onCarouselInit = function() {
+            this.carouselLoading = false;
+        }
     })
     .directive('postSlider', function ($location, $http) {
         return {

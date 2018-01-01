@@ -6,6 +6,15 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+.carousel {
+    opacity: 0;
+    transition: all .2s ease-in-out;
+}
+
+.carousel.carouselLoaded {
+    opacity: 1;
+}
+
 .main-view {
     padding: 15px;
     /* margin-left: calc(16.66% + 2px) */
@@ -42,7 +51,7 @@ ul {
 .ui-carousel .carousel-btn {
     position: relative;
     float: left;
-    margin-top: 15px;
+    margin-top: 25px;
 }
 
 * {
@@ -80,18 +89,41 @@ ul > li > a:hover {
 .post-item {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     border-radius: 3px;
-    -webkit-clip-path: polygon(0 0%,100% 0,100% 100%,0 100%);
-    background-color: #D81B60;
+    background-color: #1A237E;
     transition: all .18s ease-in-out;
+    padding: 0;
+    margin:10px 10px 0 10px;
+    text-align:center;
+    border-bottom: 1px solid #FDD835;
+}
+
+.post-item > h1 {
+    color: #fff;
+}
+
+.post-item:hover {
+    cursor: pointer
+}
+
+.post-item-header {
+    background-color: rgb(9, 18, 66)
+}
+
+.post-item-header > p > i {
+    font-size: 14px !important;
+    margin-top: -4px;
+}
+
+.post-item-footer {
+    background-color: rgb(9, 18, 66)
+}
+
+.post-item-footer > p {
+    margin: 0;
 }
 
 h1, h2 {
     font-family: 'Montserrat', sans-serif;
-}
-
-.post-item:hover {
-    -webkit-clip-path: polygon(32% 0%,100% 32%,68% 100%,0 68%);
-    cursor: pointer
 }
 
 div.nav {
@@ -100,6 +132,14 @@ div.nav {
     background: #1A237E;
     -webkit-clip-path: polygon(0 0%,100% 0,70% 100%,0 100%);
     z-index: 1;
+}
+
+.text-left {
+    text-align: left
+}
+
+.text-right {
+    text-align: right
 }
 
 .shadow {
@@ -119,6 +159,10 @@ div.nav {
     float: left;
 }
 
+.vertical-align-middle { 
+    vertical-align: middle; 
+}
+
 .carousel {
     display: relative;
 }
@@ -129,3 +173,137 @@ div.nav {
     background-color: #D81B60;
     margin: 0 10px;
 }
+
+/* loading effects */
+
+.sk-folding-cube {
+    margin: 20px auto;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    -webkit-transform: rotateZ(45deg);
+            transform: rotateZ(45deg);
+  }
+  
+  .sk-folding-cube .sk-cube {
+    float: left;
+    width: 50%;
+    height: 50%;
+    position: relative;
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1); 
+  }
+  .sk-folding-cube .sk-cube:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    -webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
+            animation: sk-foldCubeAngle 2.4s infinite linear both;
+    -webkit-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+  }
+  .sk-folding-cube .sk-cube2 {
+    -webkit-transform: scale(1.1) rotateZ(90deg);
+            transform: scale(1.1) rotateZ(90deg);
+  }
+  .sk-folding-cube .sk-cube3 {
+    -webkit-transform: scale(1.1) rotateZ(180deg);
+            transform: scale(1.1) rotateZ(180deg);
+  }
+  .sk-folding-cube .sk-cube4 {
+    -webkit-transform: scale(1.1) rotateZ(270deg);
+            transform: scale(1.1) rotateZ(270deg);
+  }
+  .sk-folding-cube .sk-cube2:before {
+    -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s;
+  }
+  .sk-folding-cube .sk-cube3:before {
+    -webkit-animation-delay: 0.6s;
+            animation-delay: 0.6s; 
+  }
+  .sk-folding-cube .sk-cube4:before {
+    -webkit-animation-delay: 0.9s;
+            animation-delay: 0.9s;
+  }
+  @-webkit-keyframes sk-foldCubeAngle {
+    0%, 10% {
+      -webkit-transform: perspective(140px) rotateX(-180deg);
+              transform: perspective(140px) rotateX(-180deg);
+      opacity: 0; 
+    } 25%, 75% {
+      -webkit-transform: perspective(140px) rotateX(0deg);
+              transform: perspective(140px) rotateX(0deg);
+      opacity: 1; 
+    } 90%, 100% {
+      -webkit-transform: perspective(140px) rotateY(180deg);
+              transform: perspective(140px) rotateY(180deg);
+      opacity: 0; 
+    } 
+  }
+  
+  @keyframes sk-foldCubeAngle {
+    0%, 10% {
+      -webkit-transform: perspective(140px) rotateX(-180deg);
+              transform: perspective(140px) rotateX(-180deg);
+      opacity: 0; 
+    } 25%, 75% {
+      -webkit-transform: perspective(140px) rotateX(0deg);
+              transform: perspective(140px) rotateX(0deg);
+      opacity: 1; 
+    } 90%, 100% {
+      -webkit-transform: perspective(140px) rotateY(180deg);
+              transform: perspective(140px) rotateY(180deg);
+      opacity: 0; 
+    }
+  }
+
+
+
+  .spinner {
+    width: 40px;
+    height: 40px;
+  
+    position: relative;
+    margin: 100px auto;
+  }
+  
+  .double-bounce1, .double-bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+  }
+  
+  .double-bounce2 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+  }
+  
+  @-webkit-keyframes sk-bounce {
+    0%, 100% { -webkit-transform: scale(0.0) }
+    50% { -webkit-transform: scale(1.0) }
+  }
+  
+  @keyframes sk-bounce {
+    0%, 100% { 
+      transform: scale(0.0);
+      -webkit-transform: scale(0.0);
+    } 50% { 
+      transform: scale(1.0);
+      -webkit-transform: scale(1.0);
+    }
+  }

@@ -1,13 +1,25 @@
 <div class="col-md-12">
-    <ui-carousel slides="main.slides" slides-to-show="4" slides-to-scroll="1">
+    <div class="spinner" ng-if="main.carouselLoading">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+    <ui-carousel class="carousel" slides="main.slides" slides-to-show="4" slides-to-scroll="1" on-init="main.onCarouselInit()" ng-class="{carouselLoaded:!main.carouselLoading}">
         <carousel-item>
-            <div class="col-4 post-item" style="padding: 20px;margin:10px;text-align:center;">
-                <h1 style="font-weight: 200;color: rgb(255, 238, 0)">{{ item.title }}</h1>
-                <p style="padding: 20px;box-sizing:border-box">{{ item.desc }}</p>
+            <div class="col-md-12">
+                <div class="col-md-12 post-item">
+                    <div class="post-item-header col-md-12">
+                        <p class="text-left col-md-6"><i class="material-icons vertical-align-middle">access_time</i>&nbsp;6 min.</p>
+                        <p class="text-right col-md-6">Kuba Byler</p>
+                    </div>
+                    <h1 class="col-md-12" style="font-weight: 200;padding: 25px;">{{ item.title }}</h1>
+                    <div class="post-item-footer col-md-12">
+                        <p style="padding: 20px;box-sizing:border-box">{{ item.desc }}</p>
+                    </div>
+                </div>
             </div>
         </carousel-item>
 
-        <a ng-click="ctrl.prev()">Prev</a>
-        <a ng-click="ctrl.next()">Next</a>
+        <a ng-click="ctrl.prev()">xdd</a>
+        <a ng-click="ctrl.next()">Nexdasdt</a>
     </ui-carousel>
 </div>
