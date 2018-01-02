@@ -41,7 +41,7 @@ ul {
 }
 
 .ui-carousel .carousel-next .carousel-btn {
-    right: 0;
+    right: -6px;
 }
 
 .ui-carousel .carousel-prev .carousel-btn {
@@ -52,6 +52,8 @@ ul {
     position: relative;
     float: left;
     margin-top: 25px;
+    background-color: #1A237E;
+    border-radius: 2px;
 }
 
 * {
