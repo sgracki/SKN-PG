@@ -1,4 +1,6 @@
-<div class="col-md-12">
+<div class="darkness" ng-class="{shown: main.postShown}"></div>
+<section class="col-md-12">
+    <h2>Najnowsze wpisy</h2>
     <div class="spinner" ng-if="main.carouselLoading">
         <div class="double-bounce1"></div>
         <div class="double-bounce2"></div>
@@ -6,20 +8,39 @@
     <ui-carousel class="carousel" slides="main.slides" slides-to-show="4" slides-to-scroll="1" on-init="main.onCarouselInit()" ng-class="{carouselLoaded:!main.carouselLoading}">
         <carousel-item>
             <div class="col-md-12">
-                <div class="col-md-12 post-item">
+                <div class="col-md-12 post-item" ng-click="item.showPost(item)">
                     <div class="post-item-header col-md-12">
-                        <p class="text-left col-md-6"><i class="material-icons vertical-align-middle">access_time</i>&nbsp;6 min.</p>
-                        <p class="text-right col-md-6">Kuba Byler</p>
+                        <p class="text-left col-md-6 no-padding"><i class="material-icons vertical-align-middle">access_time</i>&nbsp;6 min.</p>
+                        <p class="text-right col-md-6 no-padding">Kuba Byler</p>
                     </div>
-                    <h1 class="col-md-12" style="font-weight: 200;padding: 25px;">{{ item.title }}</h1>
+                    <h5 class="col-md-12" style="font-weight: 200;padding: 10px 8px;">{{main.showPost}}{{ item.title | cut:true:29:'...' }}</h5>
                     <div class="post-item-footer col-md-12">
-                        <p style="padding: 20px;box-sizing:border-box">{{ item.desc }}</p>
+                        <p style="padding: 20px 0px;box-sizing:border-box">{{ item.desc | cut:true:80:'...' }}</p>
                     </div>
                 </div>
             </div>
         </carousel-item>
 
-        <a ng-click="ctrl.prev()">xdd</a>
-        <a ng-click="ctrl.next()">Nexdasdt</a>
+        <a ng-click="ctrl.prev()"></a>
+        <a ng-click="ctrl.next()"></a>
     </ui-carousel>
+</section>
+<div class="col-md-12 post-container" ng-class="{shown: main.postShown}">
+    <button class="vanished">
+        <i class="material-icons" ng-click="main.hidePost()">close</i>
+    </button>
+    <div class="col-md-8 text-output skn-scrollbar">
+        <h1>{{main.readingPost.title}}</h1>
+
+        <span>{{main.readingPost.text}}</span>
+    </div>
 </div>
+<section class="col-md-12">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-4">
+            <div class="col-md-12">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+</section>
