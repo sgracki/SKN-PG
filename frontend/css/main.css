@@ -73,7 +73,40 @@ ul > li > a, ul > li > a:hover, ul > li > a:focus {
 }
 
 ul > li > a:hover {
-    border-bottom-color: rgb(255, 238, 0);
+    border-bottom-color: #FDD835
+}
+
+.image-cropper {
+    max-width: 100px;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.rounded {
+    display: block;
+    margin: 0 auto;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+}
+
+img.founder {
+    margin-bottom: 15px;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    transition: all .2s ease-in-out;
+    border: 3px solid #FDD835;
+}
+
+img.founder:hover {
+    -webkit-filter: none;
+    filter: none;
 }
 
 .no-float {
@@ -111,6 +144,10 @@ ul > li > a:hover {
 
 h5 {
     font-size: 22px;
+}
+
+h6 {
+    font-size: 18px;
 }
 
 .post-item-header {
@@ -233,6 +270,10 @@ div.nav {
 
 .text-right {
     text-align: right
+}
+
+.text-center {
+    text-align: center
 }
 
 .shadow {
