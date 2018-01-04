@@ -1,27 +1,16 @@
-angular.module('sknPg.contact', [])
-    .controller('ContactCtrl', function () {
-        this.slides = [
-            {
-              title: "1 title",
-              desc: 'http://lorempixel.com/560/400/sports/1', 
-            },
-            {
-              title: "2 title",
-              desc: 'http://lorempixel.com/560/400/sports/2', 
-            },
-            {
-              title: "3 title",
-              desc: 'http://lorempixel.com/560/400/sports/3', 
-            },
-            {
-              title: "4 title",
-              desc: 'http://lorempixel.com/560/400/sports/4',
-            },
-            {
-              title: "5 title",
-              desc: 'http://lorempixel.com/560/400/sports/5', 
-            },
-          ];
+angular.module('sknPg.contact', ['ngMap'])
+    .controller('ContactCtrl', function ($scope, NgMap) {
+        NgMap.getMap().then(function(map) {
+            // console.log(map.getCenter());
+            // console.log('markers', map.markers);
+            // console.log('shapes', map.shapes);
+        });
+
+        this.mapLoading = true;
+        
+        $scope.$on('mapInitialized', function (event, map) {
+            this.mapLoading = false;
+        });
     })
     .directive('postSlider', function ($location, $http) {
         return {

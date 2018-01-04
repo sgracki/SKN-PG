@@ -19,6 +19,15 @@ body {
     opacity: 1;
 }
 
+.contact-gmap {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    border: none;
+}
+
 .main-view {
     padding: 15px;
     /* margin-left: calc(16.66% + 2px) */
