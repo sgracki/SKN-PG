@@ -1,8 +1,14 @@
-<!-- <iframe class="contact-gmap" src="//www.google.com/maps/embed/v1/place?q=Harrods,Brompton%20Rd,%20UK
-    &zoom=17
-    &key=AIzaSyDiAv9gLOl5WwGK_1sEClspmnII5C3h73M">
-</iframe> -->
+<div class="spinner" ng-if="main.mapLoading">
+    <div class="double-bounce1"></div>
+    <div class="double-bounce2"></div>
+</div>
+<div class="contact-gmap" ng-class="{mapLoaded: !main.mapLoading}" map-lazy-load="https://maps.google.com/maps/api/js">
+    <div class="darkness-instant" ng-class="{shown: !main.mapLoading}"></div>
+    <ng-map center="warsaw" zoom="14"></ng-map>
+</div>
 
-<div map-lazy-load="https://maps.google.com/maps/api/js">
-    <ng-map center="41,-87" zoom="3"></ng-map>
+<div class="col-md-8 col-md-offset-2 view-content" ng-if="!main.mapLoading">
+    <h5 class="font-weight-400">
+        Skontaktuj się z nami <\call\me\maybe\>
+    </h5>
 </div>

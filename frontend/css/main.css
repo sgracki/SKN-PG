@@ -7,6 +7,10 @@ body {
     overflow-x: hidden
 }
 
+.view-content {
+    z-index: 300;
+}
+
 .ng-enter           { animation: fadeIn 0.3s ease-in-out; z-index: 8888; }
 .ng-leave           { display: none }
 
@@ -26,6 +30,15 @@ body {
     left: 0;
     top: 0;
     border: none;
+    z-index: 50;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .4s ease-in-out
+}
+
+.contact-gmap.mapLoaded {
+    visibility: visible;
+    opacity: 1
 }
 
 .main-view {
@@ -237,6 +250,24 @@ h6 {
     z-index: 100;
 }
 
+.darkness-instant {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.70);
+    z-index: 100;
+    height: 100vh;
+    width: 100vw;
+    z-index: 80;
+    visibility: hidden;
+    transition: all .2s ease-in-out;
+}
+
+.darkness-instant.shown {
+    visibility: visible;
+    opacity: 1;
+}
+
 span.author-note {
     position: absolute;
     bottom: 10px;
@@ -274,7 +305,7 @@ div.nav {
     height: 100vh;
     background-color: #1A237E;
     -webkit-clip-path: polygon(0 0%,100% 0,70% 100%,0 100%);
-    z-index: 1;
+    z-index: 101;
 }
 
 .text-left {
@@ -290,11 +321,6 @@ div.nav {
 }
 
 .shadow {
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
-    filter: blur(5px);
     width: 16.66%;
     position: absolute;
     top:0;
@@ -304,6 +330,7 @@ div.nav {
     height: 100vh;
     -webkit-clip-path: polygon(0 0%,100% 0,70% 100%,0 100%);
     float: left;
+    z-index: 100;
 }
 
 .vertical-align-middle { 

@@ -1,15 +1,16 @@
 angular.module('sknPg.contact', ['ngMap'])
-    .controller('ContactCtrl', function ($scope, NgMap) {
+    .controller('ContactCtrl', function ($scope, NgMap, $timeout) {
+        var that = this;
         NgMap.getMap().then(function(map) {
             // console.log(map.getCenter());
             // console.log('markers', map.markers);
             // console.log('shapes', map.shapes);
         });
 
-        this.mapLoading = true;
+        that.mapLoading = true;
         
         $scope.$on('mapInitialized', function (event, map) {
-            this.mapLoading = false;
+            that.mapLoading = false;
         });
     })
     .directive('postSlider', function ($location, $http) {
