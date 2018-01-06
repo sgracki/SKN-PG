@@ -3,7 +3,8 @@ const app = express()
 const secrets = require('./secrets');
 const mongoose = require('mongoose');
 
-app.use('/', express.static('../frontend'))
+app.use('/', express.static('../frontend'));
+app.use('/admin', express.static('../admin'));
 
 mongoose.connect(secrets.db);
 mongoose.connection.on('error', function () {
