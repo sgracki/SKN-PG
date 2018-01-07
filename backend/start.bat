@@ -1,0 +1,1 @@
+supervisor -w models,routes,views,app.js app.js

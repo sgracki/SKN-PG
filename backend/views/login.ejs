@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title><%- title %></title>
+    <link rel="icon" type="image/png" href="/public/static/img/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/public/static/img/favicon/favicon-16x16.png" sizes="16x16" />
+
+    <script src="/public/static/jquery/dist/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.1.2/ui-bootstrap.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.0.js"></script>
+    <style type="text/css">
+        html, body {
+            background-color: #f1f1f1 !important
+        }
+    </style>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+    <link href="/public/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <div style="width:300px;margin-top: 150px;margin-left:auto;margin-right: auto;border: 1px solid #eee;border-radius:3px;background-color:#fff;padding: 15px;box-shadow: 0 1px 1px rgba(0,0,0,0.12), 0 0px 0px rgba(0,0,0,0.24);">
+        <form action="/login" method="POST">
+            <div>
+              <!-- <span class="input-group-addon" id="basic-addon1">login</span> -->
+              <input type="text" name="email" class="form-control" placeholder="login">
+            </div>
+            <div style="margin-top:15px">
+              <!-- <span class="input-group-addon" id="basic-addon1">hasło</span> -->
+              <input type="password" name="password" class="form-control" placeholder="hasło">
+            </div>
+            <input type="submit" value="Zaloguj" class="btn btn-success" style="width:268px;margin-top: 15px;" />
+        </form>
+    </div>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/public/static/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="/public/static/js/materialize.min.js"></script>
+</body>
+
+</html>
