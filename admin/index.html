@@ -1,1 +1,39 @@
-elo
+<html ng-app="sknPg">
+    <head>
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-route.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-animate.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+        <link rel="icon" href="./favicon.ico" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:200" rel="stylesheet">
+        <link href="./css/hover.css" rel="stylesheet" media="all">
+        <link href="./css/ui-carousel.css" rel="stylesheet" media="all">
+        <script src="./js/ui-carousel.js"></script>
+        <script src="./js/ng-map.min.js"></script>
+        <link href="./css/bootstrap.min.css" rel="stylesheet" media="all">
+        <script src="./index/index.js"></script>
+        <script src="./app.js"></script>
+        <link rel="stylesheet" href="./css/main.css">
+    </head>
+    <body ng-controller="MainCtrl as main">
+        <span class="author-note">Made with ❤️ by <b>Szymon Grącki</b></span>
+        <div class="box col-lg-12 no-padding no-float">
+            <div class="nav col-lg-12 no-padding">
+                <ul>
+                    <li ng-repeat="menuItem in main.menu">
+                        <a class="hvr-underline-from-left" ng-href="#!/{{menuItem.href}}">{{menuItem.title}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="shadow col-lg-12 no-padding"></div>
+        </div>
+
+        <div ng-view class="main-view col-lg-10"></div>
+    </body>
+</html>
