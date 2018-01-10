@@ -10,7 +10,6 @@ var secrets = require('../secrets');
  * Login page.
  */
 exports.getLogin = function (req, res) {
-    console.log(req.user);
     if (req.user) return res.redirect('/admin/#');
     res.render('login', {
         title: 'Logowanie'

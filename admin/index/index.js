@@ -3,62 +3,6 @@ angular.module('sknPg.index', ['ui.carousel'])
         var that = this;
         this.carouselLoading = true;
         this.postShown = false;
-        this.slides = [
-            {
-                _id: "78b9689076bn08791b6897mn",
-                title: "Lorem ipsum dolor sit amet",
-                desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus molestie id mi sit amet tristique. Aenean quis luctus mauris, eu pellentesque eros.',
-                text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus molestie id mi sit amet tristique. Aenean quis luctus mauris, eu pellentesque eros. Pellentesque lobortis eleifend eros, sit amet tincidunt leo mollis vel. Aenean eu sapien nulla. Nulla rutrum est tortor, vitae pretium augue sagittis id. Donec nec lacinia est. Phasellus nisi arcu, fermentum a arcu ut, efficitur iaculis neque. Ut non felis consectetur, efficitur risus ac, feugiat felis.
-
-                Cras eget nulla magna. Sed egestas vel elit vel tincidunt. Suspendisse bibendum magna tortor, ac fringilla est consequat vel. Praesent at massa dapibus, vestibulum ante eu, auctor nibh. Donec in dictum odio. Curabitur at dignissim eros. Suspendisse massa nulla, efficitur id risus eu, ultricies fermentum ante. In dapibus porta tortor, eget condimentum augue vulputate et. Sed ante augue, imperdiet nec lacinia bibendum, egestas viverra felis. Aenean metus augue, venenatis ac magna ut, consequat feugiat quam. Aenean mattis semper mauris, imperdiet aliquet nisi placerat sit amet. Donec eleifend ante eget dolor accumsan pellentesque. Etiam tristique faucibus magna, eu interdum tortor sollicitudin sit amet.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus molestie id mi sit amet tristique. Aenean quis luctus mauris, eu pellentesque eros. Pellentesque lobortis eleifend eros, sit amet tincidunt leo mollis vel. Aenean eu sapien nulla. Nulla rutrum est tortor, vitae pretium augue sagittis id. Donec nec lacinia est. Phasellus nisi arcu, fermentum a arcu ut, efficitur iaculis neque. Ut non felis consectetur, efficitur risus ac, feugiat felis.
-
-Cras eget nulla magna. Sed egestas vel elit vel tincidunt. Suspendisse bibendum magna tortor, ac fringilla est consequat vel. Praesent at massa dapibus, vestibulum ante eu, auctor nibh. Donec in dictum odio. Curabitur at dignissim eros. Suspendisse massa nulla, efficitur id risus eu, ultricies fermentum ante. In dapibus porta tortor, eget condimentum augue vulputate et. Sed ante augue, imperdiet nec lacinia bibendum, egestas viverra felis. Aenean metus augue, venenatis ac magna ut, consequat feugiat quam. Aenean mattis semper mauris, imperdiet aliquet nisi placerat sit amet. Donec eleifend ante eget dolor accumsan pellentesque. Etiam tristique faucibus magna, eu interdum tortor sollicitudin sit amet.
-
-Nullam pellentesque leo at felis euismod blandit. Proin interdum at sem congue auctor. Nulla eu hendrerit sapien, ut efficitur tortor. Morbi eu vehicula metus. Proin vitae elit felis. Pellentesque scelerisque lectus non imperdiet eleifend. Donec ultricies rutrum tortor quis viverra.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus molestie id mi sit amet tristique. Aenean quis luctus mauris, eu pellentesque eros. Pellentesque lobortis eleifend eros, sit amet tincidunt leo mollis vel. Aenean eu sapien nulla. Nulla rutrum est tortor, vitae pretium augue sagittis id. Donec nec lacinia est. Phasellus nisi arcu, fermentum a arcu ut, efficitur iaculis neque. Ut non felis consectetur, efficitur risus ac, feugiat felis.
-
-Cras eget nulla magna. Sed egestas vel elit vel tincidunt. Suspendisse bibendum magna tortor, ac fringilla est consequat vel. Praesent at massa dapibus, vestibulum ante eu, auctor nibh. Donec in dictum odio. Curabitur at dignissim eros. Suspendisse massa nulla, efficitur id risus eu, ultricies fermentum ante. In dapibus porta tortor, eget condimentum augue vulputate et. Sed ante augue, imperdiet nec lacinia bibendum, egestas viverra felis. Aenean metus augue, venenatis ac magna ut, consequat feugiat quam. Aenean mattis semper mauris, imperdiet aliquet nisi placerat sit amet. Donec eleifend ante eget dolor accumsan pellentesque. Etiam tristique faucibus magna, eu interdum tortor sollicitudin sit amet.
-
-Nullam pellentesque leo at felis euismod blandit. Proin interdum at sem congue auctor. Nulla eu hendrerit sapien, ut efficitur tortor. Morbi eu vehicula metus. Proin vitae elit felis. Pellentesque scelerisque lectus non imperdiet eleifend. Donec ultricies rutrum tortor quis viverra.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus molestie id mi sit amet tristique. Aenean quis luctus mauris, eu pellentesque eros. Pellentesque lobortis eleifend eros, sit amet tincidunt leo mollis vel. Aenean eu sapien nulla. Nulla rutrum est tortor, vitae pretium augue sagittis id. Donec nec lacinia est. Phasellus nisi arcu, fermentum a arcu ut, efficitur iaculis neque. Ut non felis consectetur, efficitur risus ac, feugiat felis.
-
-Cras eget nulla magna. Sed egestas vel elit vel tincidunt. Suspendisse bibendum magna tortor, ac fringilla est consequat vel. Praesent at massa dapibus, vestibulum ante eu, auctor nibh. Donec in dictum odio. Curabitur at dignissim eros. Suspendisse massa nulla, efficitur id risus eu, ultricies fermentum ante. In dapibus porta tortor, eget condimentum augue vulputate et. Sed ante augue, imperdiet nec lacinia bibendum, egestas viverra felis. Aenean metus augue, venenatis ac magna ut, consequat feugiat quam. Aenean mattis semper mauris, imperdiet aliquet nisi placerat sit amet. Donec eleifend ante eget dolor accumsan pellentesque. Etiam tristique faucibus magna, eu interdum tortor sollicitudin sit amet.
-
-Nullam pellentesque leo at felis euismod blandit. Proin interdum at sem congue auctor. Nulla eu hendrerit sapien, ut efficitur tortor. Morbi eu vehicula metus. Proin vitae elit felis. Pellentesque scelerisque lectus non imperdiet eleifend. Donec ultricies rutrum tortor quis viverra.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus molestie id mi sit amet tristique. Aenean quis luctus mauris, eu pellentesque eros. Pellentesque lobortis eleifend eros, sit amet tincidunt leo mollis vel. Aenean eu sapien nulla. Nulla rutrum est tortor, vitae pretium augue sagittis id. Donec nec lacinia est. Phasellus nisi arcu, fermentum a arcu ut, efficitur iaculis neque. Ut non felis consectetur, efficitur risus ac, feugiat felis.
-
-Cras eget nulla magna. Sed egestas vel elit vel tincidunt. Suspendisse bibendum magna tortor, ac fringilla est consequat vel. Praesent at massa dapibus, vestibulum ante eu, auctor nibh. Donec in dictum odio. Curabitur at dignissim eros. Suspendisse massa nulla, efficitur id risus eu, ultricies fermentum ante. In dapibus porta tortor, eget condimentum augue vulputate et. Sed ante augue, imperdiet nec lacinia bibendum, egestas viverra felis. Aenean metus augue, venenatis ac magna ut, consequat feugiat quam. Aenean mattis semper mauris, imperdiet aliquet nisi placerat sit amet. Donec eleifend ante eget dolor accumsan pellentesque. Etiam tristique faucibus magna, eu interdum tortor sollicitudin sit amet.
-
-Nullam pellentesque leo at felis euismod blandit. Proin interdum at sem congue auctor. Nulla eu hendrerit sapien, ut efficitur tortor. Morbi eu vehicula metus. Proin vitae elit felis. Pellentesque scelerisque lectus non imperdiet eleifend. Donec ultricies rutrum tortor quis viverra.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus molestie id mi sit amet tristique. Aenean quis luctus mauris, eu pellentesque eros. Pellentesque lobortis eleifend eros, sit amet tincidunt leo mollis vel. Aenean eu sapien nulla. Nulla rutrum est tortor, vitae pretium augue sagittis id. Donec nec lacinia est. Phasellus nisi arcu, fermentum a arcu ut, efficitur iaculis neque. Ut non felis consectetur, efficitur risus ac, feugiat felis.
-
-Cras eget nulla magna. Sed egestas vel elit vel tincidunt. Suspendisse bibendum magna tortor, ac fringilla est consequat vel. Praesent at massa dapibus, vestibulum ante eu, auctor nibh. Donec in dictum odio. Curabitur at dignissim eros. Suspendisse massa nulla, efficitur id risus eu, ultricies fermentum ante. In dapibus porta tortor, eget condimentum augue vulputate et. Sed ante augue, imperdiet nec lacinia bibendum, egestas viverra felis. Aenean metus augue, venenatis ac magna ut, consequat feugiat quam. Aenean mattis semper mauris, imperdiet aliquet nisi placerat sit amet. Donec eleifend ante eget dolor accumsan pellentesque. Etiam tristique faucibus magna, eu interdum tortor sollicitudin sit amet.
-
-Nullam pellentesque leo at felis euismod blandit. Proin interdum at sem congue auctor. Nulla eu hendrerit sapien, ut efficitur tortor. Morbi eu vehicula metus. Proin vitae elit felis. Pellentesque scelerisque lectus non imperdiet eleifend. Donec ultricies rutrum tortor quis viverra.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus molestie id mi sit amet tristique. Aenean quis luctus mauris, eu pellentesque eros. Pellentesque lobortis eleifend eros, sit amet tincidunt leo mollis vel. Aenean eu sapien nulla. Nulla rutrum est tortor, vitae pretium augue sagittis id. Donec nec lacinia est. Phasellus nisi arcu, fermentum a arcu ut, efficitur iaculis neque. Ut non felis consectetur, efficitur risus ac, feugiat felis.
-
-Cras eget nulla magna. Sed egestas vel elit vel tincidunt. Suspendisse bibendum magna tortor, ac fringilla est consequat vel. Praesent at massa dapibus, vestibulum ante eu, auctor nibh. Donec in dictum odio. Curabitur at dignissim eros. Suspendisse massa nulla, efficitur id risus eu, ultricies fermentum ante. In dapibus porta tortor, eget condimentum augue vulputate et. Sed ante augue, imperdiet nec lacinia bibendum, egestas viverra felis. Aenean metus augue, venenatis ac magna ut, consequat feugiat quam. Aenean mattis semper mauris, imperdiet aliquet nisi placerat sit amet. Donec eleifend ante eget dolor accumsan pellentesque. Etiam tristique faucibus magna, eu interdum tortor sollicitudin sit amet.
-
-Nullam pellentesque leo at felis euismod blandit. Proin interdum at sem congue auctor. Nulla eu hendrerit sapien, ut efficitur tortor. Morbi eu vehicula metus. Proin vitae elit felis. Pellentesque scelerisque lectus non imperdiet eleifend. Donec ultricies rutrum tortor quis viverra.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus molestie id mi sit amet tristique. Aenean quis luctus mauris, eu pellentesque eros. Pellentesque lobortis eleifend eros, sit amet tincidunt leo mollis vel. Aenean eu sapien nulla. Nulla rutrum est tortor, vitae pretium augue sagittis id. Donec nec lacinia est. Phasellus nisi arcu, fermentum a arcu ut, efficitur iaculis neque. Ut non felis consectetur, efficitur risus ac, feugiat felis.
-
-Cras eget nulla magna. Sed egestas vel elit vel tincidunt. Suspendisse bibendum magna tortor, ac fringilla est consequat vel. Praesent at massa dapibus, vestibulum ante eu, auctor nibh. Donec in dictum odio. Curabitur at dignissim eros. Suspendisse massa nulla, efficitur id risus eu, ultricies fermentum ante. In dapibus porta tortor, eget condimentum augue vulputate et. Sed ante augue, imperdiet nec lacinia bibendum, egestas viverra felis. Aenean metus augue, venenatis ac magna ut, consequat feugiat quam. Aenean mattis semper mauris, imperdiet aliquet nisi placerat sit amet. Donec eleifend ante eget dolor accumsan pellentesque. Etiam tristique faucibus magna, eu interdum tortor sollicitudin sit amet.
-
-Nullam pellentesque leo at felis euismod blandit. Proin interdum at sem congue auctor. Nulla eu hendrerit sapien, ut efficitur tortor. Morbi eu vehicula metus. Proin vitae elit felis. Pellentesque scelerisque lectus non imperdiet eleifend. Donec ultricies rutrum tortor quis viverra.
-                Nullam pellentesque leo at felis euismod blandit. Proin interdum at sem congue auctor. Nulla eu hendrerit sapien, ut efficitur tortor. Morbi eu vehicula metus. Proin vitae elit felis. Pellentesque scelerisque lectus non imperdiet eleifend. Donec ultricies rutrum tortor quis viverra.`
-            },
-            {
-                title: "Lorem ipsum dolor sit amet",
-                desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus molestie id mi sit amet tristique. Aenean quis luctus mauris, eu pellentesque eros.'
-            },
-            {
-                title: "Lorem ipsum dolor sit amet",
-                desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus molestie id mi sit amet tristique. Aenean quis luctus mauris, eu pellentesque eros.'
-            },
-            {
-                title: "Lorem ipsum dolor sit amet",
-                desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus molestie id mi sit amet tristique. Aenean quis luctus mauris, eu pellentesque eros.'
-            },
-            {
-                title: "Lorem ipsum dolor sit amet",
-                desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus molestie id mi sit amet tristique. Aenean quis luctus mauris, eu pellentesque eros.'
-            },
-        ];
 
         this.slides.forEach((item, index) => {
             item.showPost = (post) => {
@@ -112,5 +56,17 @@ Nullam pellentesque leo at felis euismod blandit. Proin interdum at sem congue a
             }
 
             return value + (tail || '...');
+        };
+    })
+    .service('AdminService', function ($http) {
+        this.getAllUsers = function (successFunc, failFunc) {
+            return $http.get("/api/admin/users").then(function (resp) {
+                successFunc(resp.data);
+            }, failFunc);
+        };
+        this.addPost = function (post, successFunc, failFunc) {
+            return $http.post("/api/admin/post", post).then(function (resp) {
+                successFunc(resp.data);
+            }, failFunc);
         };
     });

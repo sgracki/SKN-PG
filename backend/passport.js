@@ -13,7 +13,6 @@ passport.serializeUser(function (user, done) {
 
 passport.deserializeUser(function (id, done) {
     User.findById(id).populate('primaryCompany').exec(function (err, user) {
-        console.log('user:' + user);
         done(err, user);
     });
 });

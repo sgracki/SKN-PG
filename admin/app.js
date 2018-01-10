@@ -1,4 +1,4 @@
-angular.module('sknPg', ['ngRoute','sknPg.index', 'ngAnimate'])
+angular.module('sknPg', ['ngRoute','sknPg.index', 'sknPg.addPost', 'ngAnimate'])
     // .run(['', () => {
 
     // }])
@@ -26,13 +26,16 @@ angular.module('sknPg', ['ngRoute','sknPg.index', 'ngAnimate'])
         }])
     .controller('MainCtrl', function () {
         this.menu = [{
-            href:'index',
+            href:'#!/index',
             title:`Panel`
         },{
-            href:'add/post',
+            href:'/',
+            title:`Strona główna`
+        },{
+            href:'#!/add/post',
             title:`Dodaj post`
         },{
-            href:'elo',
+            href:'#!/elo',
             title:`Elo`
         }]
     })

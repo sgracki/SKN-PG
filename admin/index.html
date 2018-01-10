@@ -18,6 +18,7 @@
         <script src="./js/ng-map.min.js"></script>
         <link href="./css/bootstrap.min.css" rel="stylesheet" media="all">
         <script src="./index/index.js"></script>
+        <script src="./add/post/index.js"></script>
         <script src="./app.js"></script>
         <link rel="stylesheet" href="./css/main.css">
     </head>
@@ -27,7 +28,7 @@
             <div class="nav col-lg-12 no-padding">
                 <ul>
                     <li ng-repeat="menuItem in main.menu">
-                        <a class="hvr-underline-from-left" ng-href="#!/{{menuItem.href}}">{{menuItem.title}}</a>
+                        <a class="hvr-underline-from-left" ng-href="{{menuItem.href}}">{{menuItem.title}}</a>
                     </li>
                 </ul>
             </div>
