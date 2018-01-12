@@ -68,4 +68,9 @@ angular.module('sknPg.index', ['ui.carousel'])
                 successFunc(resp.data);
             }, failFunc);
         };
+        this.getUser = function (successFunc, failFunc) {
+            return $http.get("/api/posts/user").then(function (resp) {
+                successFunc(resp.data);
+            }, failFunc);
+        };
     });

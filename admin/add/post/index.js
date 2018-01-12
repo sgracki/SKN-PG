@@ -1,5 +1,5 @@
 angular.module('sknPg.addPost', [])
-    .controller('IndexCtrl', function (AdminService) {
+    .controller('AddPostCtrl', function (AdminService) {
         var that = this;
         that.post = {};
 

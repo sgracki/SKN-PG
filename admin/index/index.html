@@ -1,1 +1,48 @@
-elo
+<link rel="stylesheet" href="./index/index.css">
+
+<div class="col-md-6" ng-if="main.user.isAdmin">
+    <div class="col-md-12 white">
+        <span>
+            Twój token do zapraszania:
+            <b>{{main.user.invToken}}</b>
+        </span>
+    </div>
+</div>
+
+<div class="col-md-6" ng-if="main.user.isAdmin">
+    <div class="col-md-12 white">
+        <h5 style="margin: 5px;">Użytkownicy</h5>
+        <table>
+            <tr>
+                <th>Imię</th>
+                <th>Nazwisko</th>
+                <th>Email</th>
+                <th>Admin</th>
+            </tr>
+            <tr ng-repeat="user in main.users track by $index">
+                <td>{{user.name}}</td>
+                <td>{{user.surname}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.isAdmin ? '👍' : '👎'}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="col-md-6" ng-if="main.user.isAdmin">
+    <div class="col-md-12 white">
+        <h5 style="margin: 5px;">Posty</h5>
+        <table>
+            <tr>
+                <th>Autor</th>
+                <th>Tytuł</th>
+                <th>Usuń</th>
+            </tr>
+            <tr ng-repeat="post in main.posts track by $index">
+                <td>{{post.author.name}}&nbsp;{{post.author.surname}}</td>
+                <td>{{post.title}}</td>
+                <td style="cursor: pointer" ng-click="main.removePost(post, $index)">❌</td>
+            </tr>
+        </table>
+    </div>
+</div>

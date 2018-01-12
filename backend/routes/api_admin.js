@@ -9,6 +9,10 @@ router.get('/users', (req, res) => {
     })
 });
 
+router.get('/user', (req, res) => {
+    res.send(req.user);
+})
+
 router.post('/post', (req, res) => {
     console.log(req.body);
     var post = new Post({
@@ -21,6 +25,12 @@ router.post('/post', (req, res) => {
 
     post.save((err) => {
         err ? res.send(err).status(403) : res.send(post).status(200);
+    })
+})
+
+router.delete('/post/:id', (req, res) => {
+    Post.findOneAndRemove({_id: req.params.id}).exec((err) => {
+        err ? res.sendStatus(403) : res.sendStatus(200);
     })
 })
 

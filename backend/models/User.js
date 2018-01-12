@@ -10,6 +10,7 @@ var userSchema = new mongoose.Schema({
     tokens: Array,
     name: String,
     surname: String,
+    invToken: String,
 
     isAdmin: {type: Boolean, default: false}
 });

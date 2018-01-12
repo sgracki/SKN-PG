@@ -12,12 +12,12 @@ angular.module('sknPg', ['ngRoute','sknPg.index', 'sknPg.addPost', 'ngAnimate'])
                 }).
                 when('/add/post', {
                     templateUrl: 'add/post/index.html',
-                    controller: 'IndexCtrl',
+                    controller: 'AddPostCtrl',
                     controllerAs: 'main'
                 }).
                 when('/elo', {
                     templateUrl: 'elo/index.html',
-                    controller: 'IndexCtrl',
+                    controller: 'EloCtrl',
                     controllerAs: 'main'
                 }).
                 otherwise({
@@ -37,6 +37,9 @@ angular.module('sknPg', ['ngRoute','sknPg.index', 'sknPg.addPost', 'ngAnimate'])
         },{
             href:'#!/elo',
             title:`Elo`
+        },{
+            href:'/logout',
+            title:`Wyloguj`
         }]
     })
     .directive('ahrefActiveLink', ['$location', function ($location) {

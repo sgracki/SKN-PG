@@ -4,6 +4,7 @@ var crypto = require('crypto');
 var passport = require('passport');
 var User = require('../models/User');
 var secrets = require('../secrets');
+var hat = require('hat');
 
 /**
  * GET /login
@@ -72,28 +73,36 @@ exports.getSignup = function (req, res) {
  * Create a new local account.
  */
 exports.postSignup = function (req, res, next) {
-    var user = new User({
-        email: req.body.email,
-        password: req.body.password
-    });
+    User.findOne({invToken: req.body.invToken}).exec((err, user) => {
+        if(err || !user) return res.redirect('/signup');
 
-    User.findOne({ email: req.body.email }, function (err, existingUser) {
-        if (existingUser) {
-            req.flash('errors', { msg: 'Account with that email address already exists.' });
-            return res.redirect('/login');
-        }
-        if (req.body.password !== req.body.repeatPassword) {
-            req.flash('errors', { msg: 'Passwords doesn\'t match.' });
-            return res.redirect('/login');
-        }
-        user.save(function (err) {
-            if (err) return next(err);
-            req.logIn(user, function (err) {
+        var user = new User({
+            email: req.body.email,
+            password: req.body.password,
+            invToken: hat(),
+            name: req.body.name,
+            surname: req.body.surname,
+            isAdmin: true
+        });
+    
+        User.findOne({ email: req.body.email }, function (err, existingUser) {
+            if (existingUser) {
+                req.flash('errors', { msg: 'Account with that email address already exists.' });
+                return res.redirect('/login');
+            }
+            if (req.body.password !== req.body.repeatPassword) {
+                req.flash('errors', { msg: 'Passwords doesn\'t match.' });
+                return res.redirect('/login');
+            }
+            user.save(function (err) {
                 if (err) return next(err);
-                res.redirect('/admin/#');
+                req.logIn(user, function (err) {
+                    if (err) return next(err);
+                    res.redirect('/admin/#');
+                });
             });
         });
-    });
+    })
 };
 
 /**

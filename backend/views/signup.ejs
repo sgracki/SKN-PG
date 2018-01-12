@@ -9,27 +9,26 @@
     <meta name="author" content="">
 
     <title>SKN-PG ELO MAKRELO</title>
-    <link rel="icon" type="image/png" href="/public/static/img/favicon/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="/public/static/img/favicon/favicon-16x16.png" sizes="16x16" />
-
-    <script src="/public/static/jquery/dist/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.1.2/ui-bootstrap.js"></script>
-    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.0.js"></script>
     <style type="text/css">
         html, body {
             background-color: #f1f1f1 !important
         }
     </style>
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
-    <link href="/public/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 
     <style>
         .no-padding {
             padding: 0;
+        }
+
+        form {
+            padding: 10px;
+        }
+
+        input {
+            border: 1px solid rgb(228,228,228);
+            border-radius: 1px;
+            padding: 4px 6px;
         }
     </style>
 </head>
@@ -41,13 +40,22 @@
         <div class="panel-body">
             <form method="POST" action="/signup">
                 <div class="input-field col-lg-12 no-padding">
-                    <input placeholder="Email" type="email" ng-model="email" name="email" class="form-control validate">
+                    <input placeholder="Imię" type="text" name="name" class="form-control validate" required>
+                </div>
+                <div class="input-field col-lg-12 no-padding">
+                    <input placeholder="Nazwisko" type="text" name="surname" class="form-control validate" required>
+                </div>
+                <div class="input-field col-lg-12 no-padding">
+                    <input placeholder="Email" type="email" name="email" class="form-control validate" required>
                 </div>
                 <div class="input-field col-lg-12 no-padding" style="margin-top: 15px;">
-                    <input placeholder="Hasło" name="password" type="password" value="" class="form-control">
+                    <input placeholder="Hasło" name="password" type="password" value="" class="form-control" required>
                 </div>
                 <div class="input-field col-lg-12 no-padding" style="margin-top: 15px;">
-                    <input placeholder="Powtórz hasło" name="repeatPassword" type="password" value="" class="form-control">
+                    <input placeholder="Powtórz hasło" name="repeatPassword" type="password" value="" class="form-control" required>
+                </div>
+                <div class="input-field col-lg-12 no-padding" style="margin-top: 15px;">
+                    <input placeholder="Token zapraszający" name="invToken" type="text" value="" class="form-control" required>
                 </div>
                 <div class="col-lg-12" style="margin-top: 15px;">
                     <span class="blue-span left btn btn-vanished no-padding"><a href="/login">Mam już konto</a></span>
@@ -58,12 +66,6 @@
     </div>
 </div>
 
-
-<!-- Bootstrap Core JavaScript -->
-<script src="/public/static/bootstrap/dist/js/bootstrap.min.js"></script>
-
-<!-- Metis Menu Plugin JavaScript -->
-<script src="/public/static/js/materialize.min.js"></script>
 </body>
 
 </html>

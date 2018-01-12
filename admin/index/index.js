@@ -1,23 +1,28 @@
 angular.module('sknPg.index', ['ui.carousel'])
-    .controller('IndexCtrl', function () {
+    .controller('IndexCtrl', function (AdminService) {
         var that = this;
-        this.carouselLoading = true;
-        this.postShown = false;
 
-        this.slides.forEach((item, index) => {
-            item.showPost = (post) => {
-                that.postShown = true;
-                that.readingPost = post;
+        AdminService.getAllPosts((posts) => {
+            that.posts = posts;
+        });
+
+        that.removePost = (post, index) => {
+            if(confirm(`Na pewno chcesz usunąć post pt. ${post.title}`) == true) {
+                that.posts.splice(index, 1);
+                AdminService.removePost(post._id, () => {
+                    alert('Post usunięty.');
+                });
             }
+        }
+
+        AdminService.getAllUsers((users) => {
+            that.users = users;
         })
 
-        this.hidePost = (post) => {
-            this.postShown = false;
-        }
-
-        this.onCarouselInit = function () {
-            this.carouselLoading = false;
-        }
+        AdminService.getUser((user) => {
+            console.log('elo');
+            that.user = user;
+        })
     })
     .directive('postSlider', function ($location, $http) {
         return {
@@ -61,6 +66,21 @@ angular.module('sknPg.index', ['ui.carousel'])
     .service('AdminService', function ($http) {
         this.getAllUsers = function (successFunc, failFunc) {
             return $http.get("/api/admin/users").then(function (resp) {
+                successFunc(resp.data);
+            }, failFunc);
+        };
+        this.getAllPosts = function (successFunc, failFunc) {
+            return $http.get("/api/posts/").then(function (resp) {
+                successFunc(resp.data);
+            }, failFunc);
+        };
+        this.removePost = function ($postId, successFunc, failFunc) {
+            return $http.delete(`/api/admin/post/${$postId}`).then(function (resp) {
+                successFunc(resp.data);
+            }, failFunc);
+        };
+        this.getUser = function (successFunc, failFunc) {
+            return $http.get("/api/admin/user").then(function (resp) {
                 successFunc(resp.data);
             }, failFunc);
         };

@@ -8,4 +8,8 @@ router.get('/', (req, res) => {
     })
 });
 
+router.get('/user', (req, res) => {
+    res.send(req.user ? req.user : {});
+})
+
 module.exports = router;
