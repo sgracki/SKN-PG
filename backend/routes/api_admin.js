@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var User = require('../models/User');
+var Post = require('../models/Post');
 
 router.get('/users', (req, res) => {
     User.find({}).exec((err, users) => {
@@ -8,6 +10,7 @@ router.get('/users', (req, res) => {
 });
 
 router.post('/post', (req, res) => {
+    console.log(req.body);
     var post = new Post({
         author: req.user._id,
         title: req.body.title,

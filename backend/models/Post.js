@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
-var userSchema = new mongoose.Schema({
-    author: {type: mongoose.Schema.types.mixed, ref: 'User'},
+var postSchema = new mongoose.Schema({
+    author: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
     title: String,
     desc: String,
     text: String,

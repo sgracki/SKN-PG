@@ -40,8 +40,16 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
+app.use(function (req, res, next) {
+    res.locals.user = req.user;
+    next();
+});
+
 app.use('/', express.static('../frontend'));
 app.use('/admin', passportConf.isAuthenticated, express.static('../admin'));
+
+app.use('/api/admin', (passportConf.isAuthenticated && passportConf.isAdmin), require('./routes/api_admin'));
+app.use('/api/posts', require('./routes/api_posts'));
 
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);

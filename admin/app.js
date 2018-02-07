@@ -1,4 +1,4 @@
-angular.module('sknPg', ['ngRoute','sknPg.index', 'ngAnimate'])
+angular.module('sknPg', ['ngRoute','sknPg.index', 'sknPg.addPost', 'ngAnimate'])
     // .run(['', () => {
 
     // }])
@@ -10,12 +10,34 @@ angular.module('sknPg', ['ngRoute','sknPg.index', 'ngAnimate'])
                     controller: 'IndexCtrl',
                     controllerAs: 'main'
                 }).
+                when('/add/post', {
+                    templateUrl: 'add/post/index.html',
+                    controller: 'IndexCtrl',
+                    controllerAs: 'main'
+                }).
+                when('/elo', {
+                    templateUrl: 'elo/index.html',
+                    controller: 'IndexCtrl',
+                    controllerAs: 'main'
+                }).
                 otherwise({
                     redirectTo: '/index'
                 });
         }])
     .controller('MainCtrl', function () {
-        
+        this.menu = [{
+            href:'#!/index',
+            title:`Panel`
+        },{
+            href:'/',
+            title:`Strona główna`
+        },{
+            href:'#!/add/post',
+            title:`Dodaj post`
+        },{
+            href:'#!/elo',
+            title:`Elo`
+        }]
     })
     .directive('ahrefActiveLink', ['$location', function ($location) {
         return {

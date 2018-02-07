@@ -1,0 +1,28 @@
+input {
+    border: none;
+    border-radius: 1px;
+    padding: 4px 6px;
+    font-size: 12px;
+    width: 100%;
+    margin: 2px 0;
+    color: #111;
+    font-weight: 400;
+}
+
+textarea {
+    width: 100%;
+    border: none;
+    border-radius: 1px;
+    color: #111;
+    font-weight: 400;
+}
+
+input[type="submit"] {
+    border: 0;
+    background-color: #E91E63;
+    color: #fff;
+    border-radius: 1px;
+    padding: 6px 12px;
+    margin-top: 15px;
+    font-weight: 400;
+}

@@ -26,8 +26,8 @@
             <div class="col-md-12">
                 <div class="col-md-12 post-item" ng-click="item.showPost(item)">
                     <div class="post-item-header col-md-12">
-                        <p class="text-left col-md-6 no-padding"><i class="material-icons vertical-align-middle">access_time</i>&nbsp;6 min.</p>
-                        <p class="text-right col-md-6 no-padding">Kuba Byler</p>
+                        <p class="text-left col-md-6 no-padding"><i class="material-icons vertical-align-middle">access_time</i>&nbsp;{{item.readTime}} min.</p>
+                        <p class="text-right col-md-6 no-padding">{{item.author.name}}&nbsp;{{item.author.surname}}</p>
                     </div>
                     <h5 class="col-md-12" style="font-weight: 200;padding: 10px 8px;">{{main.showPost}}{{ item.title | cut:true:29:'...' }}</h5>
                     <div class="post-item-footer col-md-12">
@@ -48,7 +48,7 @@
     <div class="col-md-8 text-output skn-scrollbar">
         <h1>{{main.readingPost.title}}</h1>
 
-        <span>{{main.readingPost.text}}</span>
+        <span style="white-space: pre-wrap;">{{main.readingPost.text}}</span>
     </div>
 </div>
 <section class="col-md-12">
@@ -60,4 +60,4 @@
         </div>
     </div>
 </section>
-<div class="darkness" ng-class="{shown: main.postShown}"></div>
+<div class="darkness" ng-class="{shown: main.postShown}" ng-click="main.hidePost()"></div>

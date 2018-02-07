@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="./add/add.css">
+
+<form class="col-md-6 col-md-offset-3 xol-xs-10 col-xs-offset-1" ng-submit="main.submitPost()">
+    <label for="title">Tytuł</label>
+    <input id="title" type="text" ng-model="main.post.title" required />
+    <label for="desc">Krótki opis</label>
+    <input id="desc" type="text" ng-model="main.post.desc" required >
+    <label for="readTime">Czas czytania (min)</label>
+    <input id="readTime" type="number" ng-model="main.post.readTime" required />
+    <label for="text">Treść</label>
+    <textarea id="text" ng-model="main.post.text" cols="30" rows="10" required></textarea>
+    <input type="submit" value="Gotowe!" />
+</form>
